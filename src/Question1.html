@@ -8,6 +8,42 @@
 
 <script>
 
+    var vehicleName = "Toyota";
+    
+    function printVehicleNameOuter() {
+
+        console.log(this.vehicleName)
+        console.log(this);
+        
+    }
+
+    printVehicleNameOuter();
+
+    console.log(this);
+
+    // var vehicle = {
+    //     vehicleName : "Nissan",
+    //     printVehicleNameInner : printVehicleNameOuter
+    // }
+
+    var vehicle = {
+        vehicleName : "Nissan",
+        printVehicleNameInner : function () {
+
+            return function () {
+                console.log(this.vehicleName)
+            }
+        }
+    }
+
+    // vehicle.printVehicleNameInner();
+
+    // var execute = vehicle.printVehicleNameInner();
+
+    var execute = vehicle.printVehicleNameInner().bind(vehicle);
+    execute();
+    // execute.call(vehicle);
+
 </script>
 </body>
 </html>
