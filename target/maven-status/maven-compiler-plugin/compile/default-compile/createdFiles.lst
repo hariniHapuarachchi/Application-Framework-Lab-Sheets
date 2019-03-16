@@ -1,1 +1,5 @@
+com\mycompany\controller\GreetingService.class
 com\mycompany\app\App.class
+com\mycompany\controller\GreetingServiceImpl.class
+com\mycompany\model\GreetingController.class
+com\mycompany\model\Greeting.class
